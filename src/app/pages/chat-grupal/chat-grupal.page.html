@@ -1,0 +1,79 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- Botón con la imagen en el lado izquierdo -->
+    <ion-buttons slot="start">
+      <ion-button (click)="irNoticias()">
+        <img src="https://c0.klipartz.com/pngpicture/1022/856/gratis-png-boton-atras-s.png" alt="Back" class="back-image">
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Chat Grupal</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarSesion()">
+        Cerrar sesión
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="image-container">
+    <img src="https://i.pinimg.com/564x/8a/93/bc/8a93bcd4be11d590b79ce1ebb3be5af2.jpg" alt="Chat Grupal Image">
+    <div class="text-container">
+      <h2>Chat Grupal</h2>
+    </div>
+  </div>
+  <div class="button-container">
+    <ion-button expand="block" color="primary" routerLink="/grupo-uno">Grupo Uno</ion-button>
+    <ion-button expand="block" color="secondary">Grupo Dos</ion-button>
+    <ion-button expand="block" color="tertiary">Grupo Tres</ion-button>
+  </div>
+
+  <!-- Muestra los miembros del grupo -->
+  <ion-list>
+    <ion-item *ngFor="let member of groupMembers">
+      <ion-label>{{ member.name }}</ion-label> <!-- Ajusta según el formato de los datos -->
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<style>
+  .back-image {
+    width: 30px; /* Tamaño pequeño para la imagen */
+    height: 30px; /* Tamaño pequeño para la imagen */
+    object-fit: contain; /* Asegura que la imagen mantenga sus proporciones */
+  }
+  .image-container {
+    display: flex;
+    justify-content: flex-start; /* Alinea la imagen a la izquierda */
+    align-items: center;
+    padding-top: 20px; /* Espacio opcional superior */
+    padding-left: 20px; /* Espacio opcional a la izquierda */
+  }
+
+  .image-container img {
+    border-radius: 50%;
+    width: 100px; /* Tamaño ajustado */
+    height: 100px; /* Tamaño ajustado */
+    object-fit: cover;
+    margin-right: 30px; /* Espacio entre la imagen y el texto */
+  }
+
+  .text-container h2 {
+    margin: 2;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .button-container ion-button {
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 300px;
+  }
+</style>
