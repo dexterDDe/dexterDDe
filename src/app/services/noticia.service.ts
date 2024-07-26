@@ -33,6 +33,7 @@ export class NoticiaService {
   }
 
   gettopheadlines(): Observable<NoticiaResponse> {
+    // eslint-disable-next-line max-len
     return this.http.get<NoticiaResponse>('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=08bcbfe45a234e788d5067f9d8ecf13f');
   }
 }

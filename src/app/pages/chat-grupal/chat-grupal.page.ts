@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; // Importa Router
-import { ChatService } from '../../services/chat.service'; 
+import { ChatService } from '../../services/chat.service';
 @Component({
   selector: 'app-chat-grupal',
   templateUrl: './chat-grupal.page.html',

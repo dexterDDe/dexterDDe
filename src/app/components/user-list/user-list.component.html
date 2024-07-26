@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Listado de usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let user of users" [routerLink]="['/private-chat', user.id]">
+      {{ user.name }}
+    </ion-item>
+  </ion-list>
+</ion-content>
