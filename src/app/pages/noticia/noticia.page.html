@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+     Noticias
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button style="background: #4d4d4d; color: #ffffff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 12px; font-weight: bold; font-family: Arial, sans-serif;" (click)="cerrarSesion()">
+        Cerrar sesión
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button style="background: #4d4d4d; color: #ffffff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 12px; font-weight: bold; font-family: Arial, sans-serif;" (click)="irChat()">
+      Chat Grupal
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Noticias</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+
+<ion-card *ngFor="let item of noticias">
+  <ion-card-header>
+    <ion-card-subtitle>{{item.source.name}}</ion-card-subtitle>
+    <ion-card-title>{{item.title}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+   <ion-img [src]="item.urlToImage"></ion-img>
+  </ion-card-content>
+</ion-card>
+
+</ion-content>

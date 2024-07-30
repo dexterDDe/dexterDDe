@@ -1,0 +1,79 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="animated-button" (click)="irNoticias()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+      
+    </ion-buttons>
+    <ion-title>Chat Grupal</ion-title>
+    <ion-buttons slot="end">
+      <ion-button style="background: #4d4d4d; color: #ffffff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 12px; font-weight: bold; font-family: Arial, sans-serif;" (click)="cerrarSesion()">
+        Cerrar sesión
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="image-container">
+    <img src="https://i.pinimg.com/564x/8a/93/bc/8a93bcd4be11d590b79ce1ebb3be5af2.jpg" alt="Chat Grupal Image">
+    <div class="text-container">
+      <h2>Chat Grupal</h2>
+    </div>
+  </div>
+  <div class="button-container">
+    <ion-button expand="block" color="primary" (click)="irGrupoUno()">Grupo Uno</ion-button>
+    <ion-button expand="block" color="secondary" (click)="irGrupoDos()">Grupo Dos</ion-button>
+    <ion-button expand="block" color="tertiary" (click)="irGrupoTres()">Grupo Tres</ion-button>
+  </div>
+  
+  <!-- Muestra la lista de grupos -->
+  <ion-list>
+    <ion-item *ngFor="let group of groups">
+      <ion-label>{{ group.name }}</ion-label> <!-- Ajusta según el formato de los datos -->
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<style>
+  .back-image {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+  .image-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 20px;
+    padding-left: 20px;
+  }
+
+  .image-container img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 30px;
+  }
+
+  .text-container h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .button-container ion-button {
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 300px;
+  }
+</style>

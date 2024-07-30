@@ -1,0 +1,25 @@
+ 
+  ion-button {
+    margin-bottom: 15px;
+  }
+  
+  .bold-button {
+    --background: #4d4d4d;
+    --color: #ffff;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --border-radius: 12px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+  }
+
+   
+  .enhanced-button {
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+  
+  .enhanced-button:hover {
+    background: #333333; /* Cambia el color de fondo al pasar el cursor */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Aumenta la sombra */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+  }
+  

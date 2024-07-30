@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="volverChatGrupal()" shape="round" color="primary">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>  
+    <div class="toolbar-logo">
+      <img src="https://i.pinimg.com/564x/8a/93/bc/8a93bcd4be11d590b79ce1ebb3be5af2.jpg" alt="Logo Chat">
+      <ion-title>Grupo Dos</ion-title>  
+    </div> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-list class="message-list">
+  <ion-item *ngFor="let message of groupMessages" class="message-item">
+    <ion-card>
+      <ion-card-content>
+        <div class="message-content">
+          <span class="sender">{{ message.sender }}</span>
+          <p class="content">{{ message.content }}</p>
+          <span class="sent-at">{{ message.sent_at }}</span>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+</ion-list>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-item lines="none">
+      <ion-input [(ngModel)]="newMessage" placeholder="Escribe tu mensaje"></ion-input>
+      <ion-button (click)="sendMessage()" color="primary">Enviar</ion-button>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>
+
+</ion-content>
